@@ -1,8 +1,8 @@
 #Blackjack game
 import random
 from art import logo
-from replit import clear
-
+#from replit import clear
+import os
 
 #deals a random card from a list of cards
 def deal_card():
@@ -69,7 +69,7 @@ def play_game():
             user_should_deal = input(
                 "Type 'y' to get another card, type 'n' to pass: ")
             if user_should_deal.lower() == "y":
-                card = user_cards.append(deal_card())
+                user_cards.append(deal_card())
             else:
                 is_game_over = True
 
@@ -89,5 +89,6 @@ def play_game():
 #Asks if the player would like to start a new game
 while input("Do you want to play a game of Blackjack? Type 'y' or 'n' ").lower(
 ) == 'y':
-    clear()
+   # clear()
+    os.system('cls')
     play_game()
